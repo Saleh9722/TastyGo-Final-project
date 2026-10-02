@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="مطعم تيستي جو — وجبات طازجة ولذيذة وطلب بسهولة." name="description" />
+    <title>TastyGo | مطعم تيستي جو</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <a class="logo" dir="ltr" href="#home">
+            Tasty<span>Go</span>
+        </a>
+
+        <button
+            aria-controls="nav"
+            aria-expanded="false"
+            aria-label="فتح القائمة"
+            class="menu-btn"
+            data-label="Open menu"
+            id="menuBtn">
+            ☰
+        </button>
+
+        <nav id="nav">
+            <a data-i18n="Home" href="#home">الرئيسية</a>
+            <a data-i18n="About" href="#about">من نحن</a>
+            <a data-i18n="Menu" href="#menu">قائمة الطعام</a>
+            <a data-i18n="Offers" href="#offers">العروض</a>
+            <a data-i18n="Gallery" href="#gallery">الصور</a>
+            <a data-i18n="Reservation" href="#reservation">الحجز</a>
+            <a data-i18n="Contact" href="#contact">تواصل معنا</a>
+        </nav>
+
+        <button
+            aria-label="Switch to English"
+            class="language-btn"
+            id="languageBtn"
+            lang="en"
+            type="button">
+            English
+        </button>
+
+        <button
+            aria-label="فتح السلة"
+            class="cart-btn"
+            data-label="Open cart"
+            onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="small-title" data-i18n="WELCOME TO TASTYGO">
+                    أهلًا بك في تيستي جو
+                </p>
+
+                <h1>
+                    <span data-i18n="Good Food.">أكل لذيذ.</span>
+                    <br />
+                    <span data-i18n="Good Mood.">مزاج سعيد.</span>
+                </h1>
+
+                <p data-i18n="Fresh meals, delicious taste and fast service. Choose your favorite food and order easily.">
+                    وجبات طازجة، ومذاق لذيذ، وخدمة سريعة. اختر وجبتك المفضلة واطلب بكل سهولة.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="btn" data-i18n="View Menu" href="#menu">
+                        تصفح القائمة
+                    </a>
+
+                    <a class="btn outline" data-i18n="Book a Table" href="#reservation">
+                        احجز طاولة
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- HERO IMAGE -->
+            <div class="hero-food">
+                <img
+                    src="images/burger.jpg.jpeg"
+                    alt="برجر"
+                    data-alt="Burger"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async" />
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+        <section class="features">
+
+            <div class="feature-card">
+                <span>🍔</span>
+                <h3 data-i18n="Fresh Food">طعام طازج</h3>
+                <p data-i18n="Fresh ingredients prepared every day.">
+                    مكونات طازجة تُحضّر كل يوم.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <span>⚡</span>
+                <h3 data-i18n="Fast Service">خدمة سريعة</h3>
+                <p data-i18n="Quick ordering and fast preparation.">
+                    طلب سهل وتحضير سريع.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <span>🚚</span>
+                <h3 data-i18n="Easy Delivery">توصيل سهل</h3>
+                <p data-i18n="Order your favorite food from home.">
+                    اطلب وجبتك المفضلة من بيتك.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+        <section class="section about" id="about">
+
+            <div class="about-img">
+
+                <img
+                    src="images/pizza.jpg.jpeg"
+                    alt="البيتزا"
+                    data-alt="Pizza"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async" />
+
+            </div>
+
+            <div class="about-content">
+
+                <p class="small-title" data-i18n="ABOUT US">
+                    من نحن
+                </p>
+
+                <h2 data-i18n="We Make Food With Love">
+                    نحضّر الطعام بكل حب
+                </h2>
+
+                <p data-i18n="TastyGo is a modern restaurant concept made for people who love fresh and delicious food.">
+                    تيستي جو مطعم عصري لكل من يحب الطعام الطازج واللذيذ.
+                </p>
+
+                <p data-i18n="We serve burgers, pizza, chicken, drinks and desserts using fresh ingredients.">
+                    نقدم البرجر والبيتزا والدجاج والمشروبات والحلويات بمكونات طازجة.
+                </p>
+
+                <div class="stats">
+
+                    <div>
+                        <strong>12+</strong>
+                        <span data-i18n="Food Items">
+                            صنفًا لذيذًا
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span data-i18n="Fresh">
+                            طازج
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span data-i18n="Online Order">
+                            طلب إلكتروني
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MENU ================= -->
+        <section class="section menu-section" id="menu">
+
+            <div class="section-title">
+
+                <p class="small-title" data-i18n="OUR MENU">
+                    قائمة الطعام
+                </p>
+
+                <h2 data-i18n="Choose Your Favorite">
+                    اختر وجبتك المفضلة
+                </h2>
+
+                <p data-i18n="Pick a category and add your favorite food to your cart.">
+                    اختر القسم وأضف وجبتك المفضلة إلى السلة.
+                </p>
+
+            </div>
+
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    data-category="all"
+                    data-i18n="All">
+                    الكل
+                </button>
+
+                <button
+                    class="filter"
+                    data-category="burger"
+                    data-i18n="Burgers">
+                    البرجر
+                </button>
+
+                <button
+                    class="filter"
+                    data-category="pizza"
+                    data-i18n="Pizza">
+                    البيتزا
+                </button>
+
+                <button
+                    class="filter"
+                    data-category="chicken"
+                    data-i18n="Chicken">
+                    الدجاج
+                </button>
+
+                <button
+                    class="filter"
+                    data-category="drink"
+                    data-i18n="Drinks">
+                    المشروبات
+                </button>
+
+                <button
+                    class="filter"
+                    data-category="dessert"
+                    data-i18n="Desserts">
+                    الحلويات
+                </button>
+
+            </div>
+
+
+            <!-- JavaScript will add the food items here -->
+            <div class="food-grid" id="foodGrid">
+            </div>
+
+        </section>
+
+
+        <!-- ================= OFFER ================= -->
+        <section class="offer" id="offers">
+
+            <div>
+
+                <p class="small-title" data-i18n="SPECIAL OFFER">
+                    عرض خاص
+                </p>
+
+                <h2 data-i18n="Family Meal Deal">
+                    وجبة العائلة
+                </h2>
+
+                <p data-i18n="2 Burgers + 1 Pizza + 2 Drinks">
+                    ٢ برجر + ١ بيتزا + ٢ مشروب
+                </p>
+
+                <strong data-i18n="Only 60 SAR">
+                    فقط ٦٠ ر.س
+                </strong>
+
+                <button
+                    class="btn"
+                    data-i18n="Add Deal"
+                    onclick="addDeal()">
+                    أضف العرض
+                </button>
+
+            </div>
+
+
+            <!-- OFFER IMAGES -->
+            <div class="offer-icon">
+
+                <img
+                    src="images/burger.jpg.jpeg"
+                    alt="برجر"
+                    data-alt="Burger"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async" />
+
+                <img
+                    src="images/pizza.jpg.jpeg"
+                    alt="البيتزا"
+                    data-alt="Pizza"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async" />
+
+                <img
+                    src="images/juice.jpg.jpeg"
+                    alt="المشروبات"
+                    data-alt="Drinks"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async" />
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GALLERY ================= -->
+        <section class="section gallery" id="gallery">
+
+            <div class="section-title">
+
+                <p class="small-title" data-i18n="OUR GALLERY">
+                    معرض الصور
+                </p>
+
+                <h2 data-i18n="Food We Love">
+                    أطباق نحبها
+                </h2>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <!-- BURGER -->
+                <div>
+                    <img
+                        src="images/burger.jpg.jpeg"
+                        alt="برجر"
+                        data-alt="Burger"
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
+
+                    <span data-i18n="Burger">
+                        برجر
+                    </span>
+                </div>
+
+
+                <!-- PIZZA -->
+                <div>
+                    <img
+                        src="images/pizza.jpg.jpeg"
+                        alt="البيتزا"
+                        data-alt="Pizza"
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
+
+                    <span data-i18n="Pizza">
+                        البيتزا
+                    </span>
+                </div>
+
+
+                <!-- CHICKEN -->
+                <div>
+                    <img
+                        src="images/chicken.jpg.jpeg"
+                        alt="الدجاج"
+                        data-alt="Chicken"
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
+
+                    <span data-i18n="Chicken">
+                        الدجاج
+                    </span>
+                </div>
+
+
+                <!-- FRIES -->
+                <div>
+                    <img
+                        src="images/fries.jpg.jpeg"
+                        alt="بطاطس مقلية"
+                        data-alt="Fries"
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
+
+                    <span data-i18n="Fries">
+                        بطاطس مقلية
+                    </span>
+                </div>
+
+
+                <!-- JUICE -->
+                <div>
+                    <img
+                        src="images/juice.jpg.jpeg"
+                        alt="المشروبات"
+                        data-alt="Drinks"
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
+
+                    <span data-i18n="Drinks">
+                        المشروبات
+                    </span>
+                </div>
+
+
+                <!-- CAKE -->
+                <div>
+                    <img
+                        src="images/cake.jpg.jpeg"
+                        alt="حلويات"
+                        data-alt="Dessert"
+                        width="900"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
+
+                    <span data-i18n="Dessert">
+                        حلويات
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESERVATION ================= -->
+        <section class="section reservation" id="reservation">
+
+            <div class="section-title">
+
+                <p class="small-title" data-i18n="RESERVATION">
+                    الحجز
+                </p>
+
+                <h2 data-i18n="Book a Table">
+                    احجز طاولة
+                </h2>
+
+                <p data-i18n="Reserve your table before you visit us.">
+                    احجز طاولتك قبل زيارتنا.
+                </p>
+
+            </div>
+
+
+            <form class="form-box" id="reservationForm">
+
+                <div class="form-row">
+
+                    <input
+                        aria-label="اسمك"
+                        data-placeholder="Your Name"
+                        id="resName"
+                        placeholder="اسمك"
+                        required
+                        type="text" />
+
+                    <input
+                        aria-label="رقم الجوال"
+                        data-placeholder="Phone Number"
+                        dir="ltr"
+                        id="resPhone"
+                        placeholder="رقم الجوال"
+                        required
+                        type="tel" />
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <input
+                        aria-label="التاريخ"
+                        data-label="Date"
+                        dir="ltr"
+                        id="resDate"
+                        required
+                        type="date" />
+
+                    <input
+                        aria-label="الوقت"
+                        data-label="Time"
+                        dir="ltr"
+                        id="resTime"
+                        required
+                        type="time" />
+
+                </div>
+
+
+                <select
+                    aria-label="عدد الأشخاص"
+                    data-label="Number of people"
+                    id="resPeople"
+                    required>
+
+                    <option
+                        data-i18n="Number of people"
+                        value="">
+                        عدد الأشخاص
+                    </option>
+
+                    <option
+                        data-i18n="1 Person"
+                        value="1">
+                        شخص واحد
+                    </option>
+
+                    <option
+                        data-i18n="2 People"
+                        value="2">
+                        شخصان
+                    </option>
+
+                    <option
+                        data-i18n="3 People"
+                        value="3">
+                        ٣ أشخاص
+                    </option>
+
+                    <option
+                        data-i18n="4 People"
+                        value="4">
+                        ٤ أشخاص
+                    </option>
+
+                    <option
+                        data-i18n="5+ People"
+                        value="5+">
+                        ٥ أشخاص أو أكثر
+                    </option>
+
+                </select>
+
+
+                <button
+                    class="btn"
+                    data-i18n="Reserve Table"
+                    type="submit">
+                    احجز الطاولة
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= REVIEWS ================= -->
+        <section class="section reviews">
+
+            <div class="section-title">
+
+                <p class="small-title" data-i18n="CUSTOMER REVIEWS">
+                    آراء العملاء
+                </p>
+
+                <h2 data-i18n="What Customers Say">
+                    ماذا يقول عملاؤنا؟
+                </h2>
+
+            </div>
+
+
+            <div class="review-grid">
+
+                <article class="review-card">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p data-i18n='"The food was fresh and the service was very fast."'>
+                        «الطعام طازج والخدمة سريعة جدًا.»
+                    </p>
+
+                    <strong data-i18n="Ahmed">
+                        أحمد
+                    </strong>
+
+                </article>
+
+
+                <article class="review-card">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p data-i18n='"I really liked the burger and pizza. Everything tasted great."'>
+                        «أعجبني البرجر والبيتزا، كل شيء كان لذيذًا.»
+                    </p>
+
+                    <strong data-i18n="Omar">
+                        عمر
+                    </strong>
+
+                </article>
+
+
+                <article class="review-card">
+
+                    <div class="stars">
+                        ★★★★☆
+                    </div>
+
+                    <p data-i18n='"Good food, friendly service and easy ordering."'>
+                        «طعام لذيذ وخدمة ودودة وطلب سهل.»
+                    </p>
+
+                    <strong data-i18n="Ali">
+                        علي
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+        <section class="section contact" id="contact">
+
+            <div class="contact-info">
+
+                <p class="small-title" data-i18n="CONTACT US">
+                    تواصل معنا
+                </p>
+
+                <h2 data-i18n="Let's Talk">
+                    يسعدنا تواصلك
+                </h2>
+
+                <p data-i18n="📍 TastyGo Restaurant">
+                    📍 مطعم تيستي جو
+                </p>
+
+                <p>
+                    📞 +966 0543537032
+                </p>
+
+                <p>
+                    ✉️ baharahilsaleehmail.com
+                </p>
+
+                <p data-i18n="🕒 Open every day: 10:00 AM - 12:00 AM">
+                    🕒 يوميًا: من ١٠ صباحًا إلى ١٢ منتصف الليل
+                </p>
+
+            </div>
+
+
+            <form class="form-box" id="contactForm">
+
+                <input
+                    aria-label="اسمك"
+                    data-placeholder="Your Name"
+                    id="contactName"
+                    placeholder="اسمك"
+                    required
+                    type="text" />
+
+                <input
+                    aria-label="بريدك الإلكتروني"
+                    data-placeholder="Your Email"
+                    dir="ltr"
+                    id="contactEmail"
+                    placeholder="بريدك الإلكتروني"
+                    required
+                    type="email" />
+
+                <textarea
+                    aria-label="رسالتك"
+                    data-placeholder="Your Message"
+                    id="contactMessage"
+                    placeholder="رسالتك"
+                    required></textarea>
+
+                <button
+                    class="btn"
+                    data-i18n="Send Message"
+                    type="submit">
+                    أرسل الرسالة
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-brand">
+
+            <a class="logo" dir="ltr" href="#home">
+                Tasty<span>Go</span>
+            </a>
+
+            <p data-i18n="Fresh food. Easy ordering. Good mood.">
+                طعام طازج. طلب سهل. مزاج سعيد.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3 data-i18n="Quick Links">
+                روابط سريعة
+            </h3>
+
+            <a data-i18n="Home" href="#home">
+                الرئيسية
+            </a>
+
+            <a data-i18n="About" href="#about">
+                من نحن
+            </a>
+
+            <a data-i18n="Menu" href="#menu">
+                قائمة الطعام
+            </a>
+
+            <a data-i18n="Reservation" href="#reservation">
+                الحجز
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3 data-i18n="Contact">
+                تواصل معنا
+            </h3>
+
+            <p>
+                📞 +966 0543537032
+            </p>
+
+            <p>
+                ✉️ baharahilsaleehmail.com
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3 data-i18n="Newsletter">
+                النشرة البريدية
+            </h3>
+
+            <input
+                aria-label="بريدك الإلكتروني"
+                data-placeholder="Your email"
+                dir="ltr"
+                id="newsletterEmail"
+                placeholder="بريدك الإلكتروني"
+                type="email" />
+
+            <button
+                data-i18n="Subscribe"
+                onclick="subscribe()">
+                اشترك
+            </button>
+
+        </div>
+
+
+        <div
+            class="copyright"
+            data-i18n="© 2026 TastyGo. All Rights Reserved.">
+
+            © 2026 TastyGo. جميع الحقوق محفوظة.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= CART ================= -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <aside class="cart" id="cart">
+
+        <div class="cart-head">
+
+            <h2 data-i18n="Your Cart">
+                سلتك
+            </h2>
+
+            <button
+                aria-label="إغلاق السلة"
+                data-label="Close cart"
+                onclick="closeCart()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div id="cartItems">
+        </div>
+
+
+        <div class="cart-bottom">
+
+            <div class="cart-total">
+
+                <span data-i18n="Subtotal">
+                    المجموع الفرعي
+                </span>
+
+                <strong id="cartTotal">
+                    0 SAR
+                </strong>
+
+            </div>
+
+
+            <button
+                class="btn full"
+                data-i18n="Checkout"
+                onclick="checkout()">
+                إتمام الطلب
+            </button>
+
+
+            <button
+                class="clear-btn"
+                data-i18n="Clear Cart"
+                onclick="clearCart()">
+                إفراغ السلة
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= BACK TO TOP ================= -->
+
+    <button
+        aria-label="الرجوع إلى الأعلى"
+        class="back-to-top"
+        data-label="Back to top"
+        hidden
+        id="backToTop"
+        type="button">
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
