@@ -1,199 +1,319 @@
 :root {
-    --main: #e85d04;
-    --main-dark: #c94c00;
-    --dark: #171717;
-    --light: #fff8f2;
-    --bs-body-font-family: Arial, Helvetica, sans-serif
+  --main: #e85d04;
+  --main-dark: #c94c00;
+  --light: #fff8f2;
+  --hero-end: #fff0e4;
+  --hero-circle: #ffdcbf;
+  --bs-body-font-family: Arial, Helvetica, sans-serif;
+}
+
+[data-bs-theme="dark"] {
+  --light: #1e1915;
+  --hero-end: #272019;
+  --hero-circle: #3a2a1d;
 }
 
 [dir="rtl"] {
-    --bs-body-font-family: Tahoma, Arial, sans-serif
+  --bs-body-font-family: Tahoma, Arial, sans-serif;
 }
-
 section[id] {
-    scroll-margin-top: 80px
+  scroll-margin-top: 80px;
 }
 
-/* Brand buttons (built on Bootstrap's .btn) */
 .btn-tg {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: var(--main);
-    --bs-btn-border-color: var(--main);
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: var(--main-dark);
-    --bs-btn-hover-border-color: var(--main-dark);
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: var(--main-dark);
-    --bs-btn-active-border-color: var(--main-dark)
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--main);
+  --bs-btn-border-color: var(--main);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--main-dark);
+  --bs-btn-hover-border-color: var(--main-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--main-dark);
+  --bs-btn-active-border-color: var(--main-dark);
 }
 
 .btn-outline-tg {
-    --bs-btn-color: var(--main);
-    --bs-btn-border-color: var(--main);
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: var(--main);
-    --bs-btn-hover-border-color: var(--main);
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: var(--main);
-    --bs-btn-active-border-color: var(--main)
+  --bs-btn-color: var(--main);
+  --bs-btn-border-color: var(--main);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--main);
+  --bs-btn-hover-border-color: var(--main);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--main);
+  --bs-btn-active-border-color: var(--main);
 }
 
-/* Helpers */
 .text-tg {
-    color: var(--main)
+  color: var(--main);
 }
-
 .bg-peach {
-    background: var(--light)
+  background: var(--light);
+}
+.section-title {
+  max-width: 650px;
+}
+.form-box {
+  max-width: 680px;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    white-space: nowrap
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  white-space: nowrap;
 }
-
 .logo span {
-    color: var(--main)
+  color: var(--main);
 }
 
 .small-title {
-    color: var(--main);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 2px
+  color: var(--main);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
-
 [dir="rtl"] .small-title {
-    letter-spacing: 0
-}
-
-.section-title {
-    max-width: 650px
-}
-
-.form-box {
-    max-width: 680px
+  letter-spacing: 0;
 }
 
 .form-control:focus,
 .form-select:focus {
-    border-color: var(--main);
-    box-shadow: 0 0 0 3px #e85d041a
+  border-color: var(--main);
+  box-shadow: 0 0 0 3px #e85d041a;
 }
 
-/* Hero */
 .hero {
-    min-height: 600px;
-    background: linear-gradient(135deg, #fff8f2, #fff0e4)
+  min-height: 600px;
+  background: linear-gradient(135deg, var(--light), var(--hero-end));
 }
-
 .hero-content {
-    max-width: 620px
+  max-width: 620px;
 }
-
 .hero-food {
-    width: min(350px, 70vw);
-    aspect-ratio: 1;
-    flex-shrink: 0;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #ffdcbf;
-    box-shadow: 0 25px 50px #00000026
+  width: min(350px, 70vw);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--hero-circle);
+  box-shadow: 0 25px 50px #00000026;
+}
+.hero-food img,
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero-food img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover
-}
-
-/* Cards */
 .feature-card,
 .food-card {
-    transition: .25s
+  transition: 0.25s;
 }
-
 .feature-card:hover {
-    background: var(--light);
-    transform: translateY(-4px)
+  background: var(--light);
+  transform: translateY(-4px);
 }
-
 .food-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px #0000001a
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px #0000001a;
 }
-
 .food-image {
-    height: 220px;
-    object-fit: cover
+  height: 220px;
+  object-fit: cover;
 }
 
-/* About / Offer / Gallery */
 .about-img {
-    position: relative;
-    min-height: 320px;
-    border-radius: 18px;
-    overflow: hidden
+  position: relative;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
 }
-
 .about-img img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover
+  position: absolute;
+  inset: 0;
 }
 
 .offer strong {
-    color: #ff9d57
+  color: #ff9d57;
 }
-
 .offer-icon img {
-    width: clamp(70px, 9vw, 135px);
-    height: clamp(70px, 9vw, 135px);
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ff9d57
+  width: clamp(70px, 9vw, 135px);
+  height: clamp(70px, 9vw, 135px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ff9d57;
 }
 
 .gallery-item img {
-    display: block;
-    width: 100%;
-    height: 230px;
-    object-fit: cover
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
 }
 
-/* Footer */
 footer a:not(.logo) {
-    display: block;
-    margin: 8px 0;
-    color: #ccc;
-    text-decoration: none;
-    transition: .2s
+  display: block;
+  margin: 8px 0;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.2s;
 }
-
 footer a:hover {
-    color: var(--main)
+  color: var(--main);
 }
 
-/* Cart + back to top */
 .cart-item-image {
-    width: 52px;
-    height: 52px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .back-to-top {
-    position: fixed;
-    inset-inline-end: 20px;
-    bottom: 20px;
-    z-index: 1030;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    font-size: 26px
+  position: fixed;
+  inset-inline-end: 20px;
+  bottom: 20px;
+  z-index: 1030;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  font-size: 26px;
+}
+
+.checkout-section {
+  background: radial-gradient(circle at top, var(--hero-end), var(--light));
+}
+.checkout-card {
+  height: 100%;
+  padding: 28px;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 22px;
+  box-shadow: 0 15px 45px #00000010;
+}
+.checkout-badge {
+  padding: 7px 13px;
+  color: var(--main);
+  background: #e85d0415;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.checkout-input {
+  min-height: 48px;
+  border-radius: 12px;
+}
+textarea.checkout-input {
+  min-height: 95px;
+}
+
+.order-summary {
+  padding: 18px;
+  background: var(--light);
+  border-radius: 16px;
+}
+.checkout-total {
+  color: var(--main);
+  font-size: 24px;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.payment-option:hover {
+  border-color: var(--main);
+  transform: translateY(-2px);
+}
+.payment-option small {
+  display: block;
+  color: var(--bs-secondary-color);
+}
+.payment-icon {
+  font-size: 24px;
+}
+.btn-check:checked + .payment-option {
+  background: #e85d0410;
+  border-color: var(--main);
+  box-shadow: 0 0 0 2px #e85d0425;
+}
+.checkout-button {
+  min-height: 52px;
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+.order-success,
+.reservation-success {
+  margin: 40px auto 0;
+  text-align: center;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 22px;
+  box-shadow: 0 15px 45px #00000012;
+}
+.order-success {
+  max-width: 600px;
+  padding: 40px;
+}
+.reservation-success {
+  max-width: 680px;
+  padding: 30px;
+}
+.success-icon,
+.reservation-success-icon {
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--main);
+  border-radius: 50%;
+  font-weight: 800;
+}
+.success-icon {
+  width: 75px;
+  height: 75px;
+  font-size: 38px;
+}
+.reservation-success-icon {
+  width: 65px;
+  height: 65px;
+  font-size: 32px;
+}
+.reservation-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+.reservation-details div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: var(--light);
+  border-radius: 12px;
+}
+.reservation-details span {
+  color: var(--bs-secondary-color);
+}
+
+@media (max-width: 576px) {
+  .checkout-card {
+    padding: 20px;
+  }
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
 }
