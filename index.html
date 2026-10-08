@@ -2,56 +2,70 @@
 <html dir="rtl" lang="ar">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    
       content="مطعم تيستي جو — وجبات طازجة ولذيذة وطلب بسهولة."
+      name="description"
     />
+    <script>
+      try {
+        let s = localStorage.getItem("tastyGoTheme");
+        document.documentElement.dataset.bsTheme =
+          s ||
+          (matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light");
+      } catch (e) {}
+    </script>
     <title>TastyGo | مطعم تيستي جو</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
       id="bootstrapCss"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link href="style.css" rel="stylesheet" />
   </head>
-
   <body>
-    <!-- HEADER -->
     <nav
-      class="navbar navbar-expand-lg sticky-top bg-white shadow-sm px-3 px-lg-5"
+      class="navbar navbar-expand-lg sticky-top bg-body shadow-sm px-3 px-lg-5"
     >
       <a class="navbar-brand logo" dir="ltr" href="#home"
         >Tasty<span>Go</span></a
       >
       <div class="d-flex align-items-center gap-2 order-lg-last">
         <button
+          aria-label="Switch to English"
           class="btn btn-outline-tg btn-sm rounded-pill"
           id="languageBtn"
-          type="button"
           lang="en"
-          aria-label="Switch to English"
+          type="button"
         >
           English
         </button>
         <button
-          class="btn btn-tg rounded-pill"
+          aria-label="Dark mode"
+          class="btn btn-outline-tg btn-sm rounded-pill"
+          id="themeBtn"
           type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#cart"
-          data-label="Open cart"
+        >
+          🌙
+        </button>
+        <a
           aria-label="فتح السلة"
+          class="btn btn-tg rounded-pill"
+          data-label="Open cart"
+          href="#order"
         >
           🛒 <span id="cartCount">0</span>
-        </button>
+        </a>
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#nav"
-          data-label="Open menu"
-          aria-label="فتح القائمة"
           aria-controls="nav"
+          aria-label="فتح القائمة"
+          class="navbar-toggler"
+          data-bs-target="#nav"
+          data-bs-toggle="collapse"
+          data-label="Open menu"
+          type="button"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -70,9 +84,7 @@
         </div>
       </div>
     </nav>
-
     <main>
-      <!-- HERO -->
       <section
         class="hero px-3 px-lg-5 py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-5 text-center text-lg-start"
         id="home"
@@ -111,16 +123,14 @@
         </div>
         <div class="hero-food">
           <img
-            src="images/burger.jpg.jpeg"
             alt="برجر"
             data-alt="Burger"
-            width="900"
             height="600"
+            src="images/burger.jpg.jpeg"
+            width="900"
           />
         </div>
       </section>
-
-      <!-- FEATURES -->
       <section class="container py-5">
         <div class="row g-4 text-center">
           <div class="col-md-4">
@@ -161,16 +171,14 @@
           </div>
         </div>
       </section>
-
-      <!-- ABOUT -->
-      <section class="bg-light py-5" id="about">
+      <section class="bg-body-tertiary py-5" id="about">
         <div class="container row align-items-center g-5 mx-auto">
           <div class="col-md-6 about-img">
             <img
-              src="images/pizza.jpg.jpeg"
               alt="البيتزا"
               data-alt="Pizza"
               loading="lazy"
+              src="images/pizza.jpg.jpeg"
             />
           </div>
           <div class="col-md-6">
@@ -216,8 +224,6 @@
           </div>
         </div>
       </section>
-
-      <!-- MENU -->
       <section class="container py-5" id="menu">
         <div class="section-title mx-auto text-center mb-5">
           <p class="small-title" data-i18n="OUR MENU">قائمة الطعام</p>
@@ -231,54 +237,12 @@
             اختر القسم وأضف وجبتك المفضلة إلى السلة.
           </p>
         </div>
-        <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
-          <button
-            class="filter btn btn-outline-tg rounded-pill active"
-            data-category="all"
-            data-i18n="All"
-          >
-            الكل
-          </button>
-          <button
-            class="filter btn btn-outline-tg rounded-pill"
-            data-category="burger"
-            data-i18n="Burgers"
-          >
-            البرجر
-          </button>
-          <button
-            class="filter btn btn-outline-tg rounded-pill"
-            data-category="pizza"
-            data-i18n="Pizza"
-          >
-            البيتزا
-          </button>
-          <button
-            class="filter btn btn-outline-tg rounded-pill"
-            data-category="chicken"
-            data-i18n="Chicken"
-          >
-            الدجاج
-          </button>
-          <button
-            class="filter btn btn-outline-tg rounded-pill"
-            data-category="drink"
-            data-i18n="Drinks"
-          >
-            المشروبات
-          </button>
-          <button
-            class="filter btn btn-outline-tg rounded-pill"
-            data-category="dessert"
-            data-i18n="Desserts"
-          >
-            الحلويات
-          </button>
-        </div>
+        <div
+          class="d-flex justify-content-center gap-2 flex-wrap mb-4"
+          id="filters"
+        ></div>
         <div class="row g-4" id="foodGrid"></div>
       </section>
-
-      <!-- OFFER -->
       <section class="offer bg-dark text-white py-5" id="offers">
         <div
           class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 text-center text-md-start"
@@ -307,28 +271,26 @@
           </div>
           <div class="offer-icon d-flex gap-2">
             <img
-              src="images/burger.jpg.jpeg"
               alt="برجر"
               data-alt="Burger"
               loading="lazy"
+              src="images/burger.jpg.jpeg"
             />
             <img
-              src="images/pizza.jpg.jpeg"
               alt="البيتزا"
               data-alt="Pizza"
               loading="lazy"
+              src="images/pizza.jpg.jpeg"
             />
             <img
-              src="images/juice.jpg.jpeg"
               alt="المشروبات"
               data-alt="Drinks"
               loading="lazy"
+              src="images/juice.jpg.jpeg"
             />
           </div>
         </div>
       </section>
-
-      <!-- GALLERY -->
       <section class="bg-peach py-5" id="gallery">
         <div class="container">
           <div class="section-title mx-auto text-center mb-5">
@@ -337,108 +299,9 @@
               أطباق نحبها
             </h2>
           </div>
-          <div class="row g-3">
-            <div class="col-6 col-md-4">
-              <div
-                class="gallery-item position-relative overflow-hidden rounded-3"
-              >
-                <img
-                  src="images/burger.jpg.jpeg"
-                  alt="برجر"
-                  data-alt="Burger"
-                  loading="lazy"
-                /><span
-                  class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
-                  data-i18n="Burger"
-                  >برجر</span
-                >
-              </div>
-            </div>
-            <div class="col-6 col-md-4">
-              <div
-                class="gallery-item position-relative overflow-hidden rounded-3"
-              >
-                <img
-                  src="images/pizza.jpg.jpeg"
-                  alt="البيتزا"
-                  data-alt="Pizza"
-                  loading="lazy"
-                /><span
-                  class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
-                  data-i18n="Pizza"
-                  >البيتزا</span
-                >
-              </div>
-            </div>
-            <div class="col-6 col-md-4">
-              <div
-                class="gallery-item position-relative overflow-hidden rounded-3"
-              >
-                <img
-                  src="images/chicken.jpg.jpeg"
-                  alt="الدجاج"
-                  data-alt="Chicken"
-                  loading="lazy"
-                /><span
-                  class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
-                  data-i18n="Chicken"
-                  >الدجاج</span
-                >
-              </div>
-            </div>
-            <div class="col-6 col-md-4">
-              <div
-                class="gallery-item position-relative overflow-hidden rounded-3"
-              >
-                <img
-                  src="images/fries.jpg.jpeg"
-                  alt="بطاطس مقلية"
-                  data-alt="Fries"
-                  loading="lazy"
-                /><span
-                  class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
-                  data-i18n="Fries"
-                  >بطاطس مقلية</span
-                >
-              </div>
-            </div>
-            <div class="col-6 col-md-4">
-              <div
-                class="gallery-item position-relative overflow-hidden rounded-3"
-              >
-                <img
-                  src="images/juice.jpg.jpeg"
-                  alt="المشروبات"
-                  data-alt="Drinks"
-                  loading="lazy"
-                /><span
-                  class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
-                  data-i18n="Drinks"
-                  >المشروبات</span
-                >
-              </div>
-            </div>
-            <div class="col-6 col-md-4">
-              <div
-                class="gallery-item position-relative overflow-hidden rounded-3"
-              >
-                <img
-                  src="images/cake.jpg.jpeg"
-                  alt="حلويات"
-                  data-alt="Dessert"
-                  loading="lazy"
-                /><span
-                  class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
-                  data-i18n="Dessert"
-                  >حلويات</span
-                >
-              </div>
-            </div>
-          </div>
+          <div class="row g-3" id="galleryGrid"></div>
         </div>
       </section>
-
-      <!-- RESERVATION -->
       <section class="container py-5" id="reservation">
         <div class="section-title mx-auto text-center mb-5">
           <p class="small-title" data-i18n="RESERVATION">الحجز</p>
@@ -453,56 +316,67 @@
         <form class="form-box mx-auto row g-3" id="reservationForm">
           <div class="col-md-6">
             <input
-              class="form-control"
               aria-label="اسمك"
+              class="form-control"
               data-placeholder="Your Name"
               id="resName"
               placeholder="اسمك"
-              required
+              required=""
               type="text"
             />
           </div>
           <div class="col-md-6">
             <input
-              class="form-control"
               aria-label="رقم الجوال"
+              class="form-control"
               data-placeholder="Phone Number"
               dir="ltr"
               id="resPhone"
-              placeholder="رقم الجوال"
-              required
+              inputmode="numeric"
+              maxlength="10"
+              placeholder="05xxxxxxxx"
+              required=""
               type="tel"
             />
           </div>
           <div class="col-md-6">
             <input
-              class="form-control"
               aria-label="التاريخ"
+              class="form-control"
               data-label="Date"
               dir="ltr"
               id="resDate"
-              required
+              required=""
               type="date"
             />
           </div>
           <div class="col-md-6">
             <input
-              class="form-control"
               aria-label="الوقت"
+              class="form-control"
               data-label="Time"
               dir="ltr"
               id="resTime"
-              required
+              max="23:59"
+              min="10:00"
+              required=""
               type="time"
             />
+            <div
+              class="text-danger small mt-1 d-none"
+              data-i18n="The restaurant is open from 10:00 AM to 12:00 AM."
+              id="resTimeError"
+            >
+              المطعم مفتوح من 10:00 صباحًا إلى 12:00 منتصف الليل.
+            </div>
           </div>
           <div class="col-12">
             <select
-              class="form-select"
               aria-label="عدد الأشخاص"
+              class="form-select"
               data-label="Number of people"
               id="resPeople"
-              required
+              required=""
             >
               <option data-i18n="Number of people" value="">عدد الأشخاص</option>
               <option data-i18n="1 Person" value="1">شخص واحد</option>
@@ -523,9 +397,7 @@
           </div>
         </form>
       </section>
-
-      <!-- REVIEWS -->
-      <section class="bg-light py-5">
+      <section class="bg-body-tertiary py-5">
         <div class="container">
           <div class="section-title mx-auto text-center mb-5">
             <p class="small-title" data-i18n="CUSTOMER REVIEWS">آراء العملاء</p>
@@ -573,8 +445,6 @@
           </div>
         </div>
       </section>
-
-      <!-- CONTACT -->
       <section class="bg-peach py-5" id="contact">
         <div class="container row g-5 mx-auto">
           <div class="col-md-6">
@@ -599,32 +469,32 @@
             id="contactForm"
           >
             <input
-              class="form-control"
               aria-label="اسمك"
+              class="form-control"
               data-placeholder="Your Name"
               id="contactName"
               placeholder="اسمك"
-              required
+              required=""
               type="text"
             />
             <input
-              class="form-control"
               aria-label="بريدك الإلكتروني"
+              class="form-control"
               data-placeholder="Your Email"
               dir="ltr"
               id="contactEmail"
               placeholder="بريدك الإلكتروني"
-              required
+              required=""
               type="email"
             />
             <textarea
-              class="form-control"
-              rows="5"
               aria-label="رسالتك"
+              class="form-control"
               data-placeholder="Your Message"
               id="contactMessage"
               placeholder="رسالتك"
-              required
+              required=""
+              rows="5"
             ></textarea>
             <button
               class="btn btn-tg btn-lg"
@@ -636,9 +506,208 @@
           </form>
         </div>
       </section>
-    </main>
 
-    <!-- FOOTER -->
+      <!-- ========================= إتمام الطلب (مترجم) ========================= -->
+      <section class="checkout-section py-5" id="order">
+        <div class="container">
+          <div class="text-center mb-5">
+            <p class="small-title" data-i18n="COMPLETE YOUR ORDER">أكمل طلبك</p>
+            <h2 class="display-5 fw-bold" data-i18n="Checkout">إتمام الطلب</h2>
+            <p
+              class="text-secondary"
+              data-i18n="Review your order and enter your details to complete it"
+            >
+              راجع طلبك وأدخل بياناتك لإكمال الطلب
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div class="checkout-card">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div>
+                    <h3 class="h4 fw-bold mb-1" data-i18n="🛒 Your Order">
+                      🛒 طلبك
+                    </h3>
+                    <p
+                      class="text-secondary small mb-0"
+                      data-i18n="The items you chose"
+                    >
+                      المنتجات التي اخترتها
+                    </p>
+                  </div>
+                  <span class="checkout-badge">TastyGo</span>
+                </div>
+                <div id="orderItems"></div>
+                <div class="order-summary mt-4">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary" data-i18n="Subtotal"
+                      >المجموع الفرعي</span
+                    >
+                    <span id="orderSubtotal">0 ر.س</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary" data-i18n="Delivery Fee"
+                      >رسوم التوصيل</span
+                    >
+                    <span id="orderDelivery">10 ر.س</span>
+                  </div>
+                  <hr />
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <strong class="fs-5" data-i18n="Total">الإجمالي</strong>
+                    <strong class="checkout-total" id="orderTotal"
+                      >0 ر.س</strong
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="checkout-card">
+                <h3 class="h4 fw-bold mb-1" data-i18n="Customer Details">
+                  بيانات العميل
+                </h3>
+                <p
+                  class="text-secondary small mb-4"
+                  data-i18n="Enter your information to complete the order"
+                >
+                  أدخل معلوماتك لإكمال الطلب
+                </p>
+                <form id="orderForm">
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      data-i18n="Full Name"
+                      for="orderName"
+                      >الاسم الكامل</label
+                    >
+                    <input
+                      class="form-control checkout-input"
+                      data-placeholder="Enter your name"
+                      id="orderName"
+                      placeholder="اكتب اسمك"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      data-i18n="Phone Number"
+                      for="orderPhone"
+                      >رقم الجوال</label
+                    >
+                    <input
+                      class="form-control checkout-input"
+                      dir="ltr"
+                      id="orderPhone"
+                      maxlength="10"
+                      placeholder="05xxxxxxxx"
+                      required=""
+                      type="tel"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" data-i18n="Email" for="orderEmail"
+                      >البريد الإلكتروني</label
+                    >
+                    <input
+                      class="form-control checkout-input"
+                      dir="ltr"
+                      id="orderEmail"
+                      placeholder="name@example.com"
+                      required=""
+                      type="email"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label
+                      class="form-label"
+                      data-i18n="Delivery Address"
+                      for="orderAddress"
+                      >عنوان التوصيل</label
+                    >
+                    <textarea
+                      class="form-control checkout-input"
+                      data-placeholder="Enter your delivery address"
+                      id="orderAddress"
+                      placeholder="اكتب عنوان التوصيل"
+                      required=""
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label d-block" data-i18n="Payment Method"
+                      >طريقة الدفع</label
+                    >
+                    <div class="payment-options">
+                      <input
+                        checked=""
+                        class="btn-check"
+                        id="paymentCash"
+                        name="payment"
+                        type="radio"
+                        value="cash"
+                      />
+                      <label class="payment-option" for="paymentCash">
+                        <span class="payment-icon">💵</span>
+                        <span>
+                          <strong data-i18n="Cash on Delivery"
+                            >الدفع عند الاستلام</strong
+                          >
+                          <small data-i18n="Cash">Cash</small>
+                        </span>
+                      </label>
+                      <input
+                        class="btn-check"
+                        id="paymentCard"
+                        name="payment"
+                        type="radio"
+                        value="card"
+                      />
+                      <label class="payment-option" for="paymentCard">
+                        <span class="payment-icon">💳</span>
+                        <span>
+                          <strong data-i18n="Bank Card">بطاقة بنكية</strong>
+                          <small data-i18n="Card">Card</small>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <button
+                    class="btn btn-tg btn-lg w-100 checkout-button"
+                    data-i18n="Confirm Order"
+                    type="submit"
+                  >
+                    تأكيد الطلب
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="order-success d-none" id="orderSuccess">
+            <div class="success-icon">✓</div>
+            <h3 class="fw-bold" data-i18n="Order Confirmed">تم تأكيد طلبك</h3>
+            <p
+              class="text-secondary"
+              data-i18n="Thank you, your order has been received."
+            >
+              شكرًا لك، تم استلام طلبك بنجاح.
+            </p>
+            <p>
+              <span data-i18n="Order number:">رقم الطلب:</span>
+              <strong class="text-tg" id="orderNumber"></strong>
+            </p>
+            <a class="btn btn-tg mt-2" data-i18n="Back to Menu" href="#menu"
+              >العودة للقائمة</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="bg-dark text-white pt-5 pb-3 px-3 px-lg-5">
       <div class="row g-4">
         <div class="col-12 col-lg-4">
@@ -665,8 +734,8 @@
         <div class="col-12 col-lg-3">
           <h3 class="h5" data-i18n="Newsletter">النشرة البريدية</h3>
           <input
-            class="form-control mb-2"
             aria-label="بريدك الإلكتروني"
+            class="form-control mb-2"
             data-placeholder="Your email"
             dir="ltr"
             id="newsletterEmail"
@@ -677,6 +746,7 @@
             class="btn btn-tg btn-sm"
             data-i18n="Subscribe"
             onclick="subscribe()"
+            type="button"
           >
             اشترك
           </button>
@@ -689,62 +759,16 @@
         </div>
       </div>
     </footer>
-
-    <!-- CART (Bootstrap offcanvas) -->
-    <aside
-      class="offcanvas offcanvas-end"
-      id="cart"
-      tabindex="-1"
-      aria-labelledby="cartTitle"
-    >
-      <div class="offcanvas-header border-bottom">
-        <h2 class="offcanvas-title h4" id="cartTitle" data-i18n="Your Cart">
-          سلتك
-        </h2>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          data-label="Close cart"
-          aria-label="إغلاق السلة"
-        ></button>
-      </div>
-      <div class="offcanvas-body d-flex flex-column">
-        <div class="flex-grow-1 overflow-auto" id="cartItems"></div>
-        <div class="border-top pt-3">
-          <div class="d-flex justify-content-between fs-5 mb-3">
-            <span data-i18n="Subtotal">المجموع الفرعي</span
-            ><strong id="cartTotal">0 SAR</strong>
-          </div>
-          <button
-            class="btn btn-tg w-100"
-            data-i18n="Checkout"
-            onclick="checkout()"
-          >
-            إتمام الطلب
-          </button>
-          <button
-            class="btn btn-link text-danger w-100 mt-2"
-            data-i18n="Clear Cart"
-            onclick="clearCart()"
-          >
-            إفراغ السلة
-          </button>
-        </div>
-      </div>
-    </aside>
-
     <button
-      class="back-to-top btn btn-tg rounded-circle"
       aria-label="الرجوع إلى الأعلى"
+      class="back-to-top btn btn-tg rounded-circle"
       data-label="Back to top"
-      hidden
+      hidden=""
       id="backToTop"
       type="button"
     >
       ↑
     </button>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
