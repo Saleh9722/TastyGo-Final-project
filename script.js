@@ -84,174 +84,232 @@ const translations = {
   "Your email": "بريدك الإلكتروني",
   Subscribe: "اشترك",
   "© 2026 TastyGo. All Rights Reserved.": "© 2026 TastyGo. جميع الحقوق محفوظة.",
-  "Your Cart": "سلتك",
-  Subtotal: "المجموع الفرعي",
-  Checkout: "إتمام الطلب",
-  "Clear Cart": "إفراغ السلة",
   Date: "التاريخ",
   Time: "الوقت",
-  "Open menu": "فتح القائمة",
-  "Open cart": "فتح السلة",
-  "Close cart": "إغلاق السلة",
   "Back to top": "الرجوع إلى الأعلى",
   "Add to Cart": "أضف إلى السلة",
   "Your cart is empty.": "سلتك فارغة.",
-  "Are you sure you want to clear your cart?": "هل تريد إفراغ السلة؟",
-  "Enter your name:": "أدخل اسمك:",
-  "Please enter your name.": "يرجى إدخال اسمك.",
-  "Enter your delivery address:": "أدخل عنوان التوصيل:",
-  "Please enter your address.": "يرجى إدخال عنوانك.",
-  "Order Summary": "ملخص الطلب",
-  Name: "الاسم",
-  Address: "العنوان",
-  Total: "الإجمالي",
-  "Confirm your order?": "هل تريد تأكيد الطلب؟",
   "Thank you": "شكرًا لك",
-  "Your order has been confirmed.": "تم تأكيد طلبك.",
-  "Order cancelled.": "تم إلغاء الطلب.",
-  "Reservation confirmed!": "تم تأكيد الحجز!",
-  People: "عدد الأشخاص",
   "Your message has been sent.": "تم إرسال رسالتك.",
   "Please enter your email.": "يرجى إدخال بريدك الإلكتروني.",
   "You are now subscribed.": "تم اشتراكك في النشرة البريدية.",
-  "Decrease quantity": "تقليل الكمية",
-  "Increase quantity": "زيادة الكمية",
+  "Dark mode": "الوضع الداكن",
+  "Light mode": "الوضع الفاتح",
+
+  // ===== قسم إتمام الطلب =====
+  "COMPLETE YOUR ORDER": "أكمل طلبك",
+  Checkout: "إتمام الطلب",
+  "Review your order and enter your details to complete it":
+    "راجع طلبك وأدخل بياناتك لإكمال الطلب",
+  "🛒 Your Order": "🛒 طلبك",
+  "The items you chose": "المنتجات التي اخترتها",
+  Subtotal: "المجموع الفرعي",
+  "Delivery Fee": "رسوم التوصيل",
+  Total: "الإجمالي",
+  "Customer Details": "بيانات العميل",
+  "Enter your information to complete the order": "أدخل معلوماتك لإكمال الطلب",
+  "Full Name": "الاسم الكامل",
+  Email: "البريد الإلكتروني",
+  "Delivery Address": "عنوان التوصيل",
+  "Payment Method": "طريقة الدفع",
+  "Cash on Delivery": "الدفع عند الاستلام",
+  "Bank Card": "بطاقة بنكية",
+  Cash: "نقدًا",
+  Card: "بطاقة",
+  "Confirm Order": "تأكيد الطلب",
+  "Order Confirmed": "تم تأكيد طلبك",
+  "Thank you, your order has been received.": "شكرًا لك، تم استلام طلبك بنجاح.",
+  "Order number:": "رقم الطلب:",
+  "Back to Menu": "العودة للقائمة",
+  "Enter your name": "اكتب اسمك",
+  "Enter your delivery address": "اكتب عنوان التوصيل",
+  Free: "مجاني",
+  "Open cart": "فتح السلة",
+  "Open menu": "فتح القائمة",
+
+  // ===== رسائل التنبيه =====
+  "Your cart is empty, add an item first.": "السلة فارغة، أضف منتجًا أولًا.",
+  "Please enter your name.": "يرجى إدخال الاسم.",
+  "Phone number must look like 05xxxxxxxx":
+    "رقم الجوال يجب أن يكون بصيغة 05xxxxxxxx",
+  "Please enter a valid email.": "يرجى إدخال بريد إلكتروني صحيح.",
+  "Please enter your delivery address.": "يرجى إدخال عنوان التوصيل.",
+
+  // ===== الحجز =====
+  "The restaurant is open from 10:00 AM to 12:00 AM.":
+    "المطعم مفتوح من 10:00 صباحًا إلى 12:00 منتصف الليل.",
+  "Reservation Confirmed": "تم تأكيد الحجز",
+  "Your reservation has been received successfully": "تم استلام حجزك بنجاح",
+  Name: "الاسم",
 };
+
 const foods = [
-  {
-    id: 1,
-    name: "Classic Burger",
-    category: "burger",
-    price: 20,
-    icon: "🍔",
-    desc: "Beef burger with cheese and fresh vegetables.",
-    nameAr: "برجر كلاسيك",
-    descAr: "برجر لحم مع الجبن والخضار الطازجة.",
-    image: "images/burger.jpg.jpeg",
-  },
-  {
-    id: 2,
-    name: "Cheese Burger",
-    category: "burger",
-    price: 23,
-    icon: "🍔",
-    desc: "Juicy beef burger with melted cheese.",
-    nameAr: "برجر بالجبن",
-    descAr: "برجر لحم شهي مع الجبن الذائب.",
-    image: "images/cheeseburger.jpg.jpeg",
-  },
-  {
-    id: 3,
-    name: "Chicken Burger",
-    category: "burger",
-    price: 21,
-    icon: "🍔",
-    desc: "Crispy chicken with lettuce and special sauce.",
-    nameAr: "برجر دجاج",
-    descAr: "دجاج مقرمش مع الخس والصلصة الخاصة.",
-    image: "images/chicken-burger.jpg.jpeg",
-  },
-  {
-    id: 4,
-    name: "Margherita Pizza",
-    category: "pizza",
-    price: 25,
-    icon: "🍕",
-    desc: "Classic pizza with tomato sauce and cheese.",
-    nameAr: "بيتزا مارغريتا",
-    descAr: "بيتزا كلاسيكية بصلصة الطماطم والجبن.",
-    image: "images/pizza.jpg.jpeg",
-  },
-  {
-    id: 5,
-    name: "Chicken Pizza",
-    category: "pizza",
-    price: 28,
-    icon: "🍕",
-    desc: "Pizza topped with chicken and fresh vegetables.",
-    nameAr: "بيتزا الدجاج",
-    descAr: "بيتزا بالدجاج والخضار الطازجة.",
-    image: "images/chicken-pizza.jpg.jpeg",
-  },
-  {
-    id: 6,
-    name: "Spicy Pizza",
-    category: "pizza",
-    price: 27,
-    icon: "🍕",
-    desc: "Spicy pizza for people who love extra flavor.",
-    nameAr: "بيتزا حارة",
-    descAr: "بيتزا حارة لعشاق النكهات القوية.",
-    image: "images/spicy-pizza.jpg.jpeg",
-  },
-  {
-    id: 7,
-    name: "Fried Chicken",
-    category: "chicken",
-    price: 22,
-    icon: "🍗",
-    desc: "Crispy fried chicken pieces.",
-    nameAr: "دجاج مقلي",
-    descAr: "قطع دجاج مقلية ومقرمشة.",
-    image: "images/chicken.jpg.jpeg",
-  },
-  {
-    id: 8,
-    name: "Chicken Strips",
-    category: "chicken",
-    price: 19,
-    icon: "🍗",
-    desc: "Crispy chicken strips served with sauce.",
-    nameAr: "ستربس الدجاج",
-    descAr: "شرائح دجاج مقرمشة تُقدم مع الصلصة.",
-    image: "images/strips.jpg.jpeg",
-  },
-  {
-    id: 9,
-    name: "Cola",
-    category: "drink",
-    price: 6,
-    icon: "🥤",
-    desc: "Cold refreshing soft drink.",
-    nameAr: "كولا",
-    descAr: "مشروب غازي بارد ومنعش.",
-    image: "images/cola.jpg.jpeg",
-  },
-  {
-    id: 10,
-    name: "Fresh Juice",
-    category: "drink",
-    price: 8,
-    icon: "🧃",
-    desc: "Fresh fruit juice.",
-    nameAr: "عصير طازج",
-    descAr: "عصير فواكه طازج.",
-    image: "images/juice.jpg.jpeg",
-  },
-  {
-    id: 11,
-    name: "Chocolate Cake",
-    category: "dessert",
-    price: 12,
-    icon: "🍰",
-    desc: "Soft chocolate cake with rich flavor.",
-    nameAr: "كيكة الشوكولاتة",
-    descAr: "كيكة شوكولاتة طرية بنكهة غنية.",
-    image: "images/cake.jpg.jpeg",
-  },
-  {
-    id: 12,
-    name: "Ice Cream",
-    category: "dessert",
-    price: 10,
-    icon: "🍦",
-    desc: "Cold and sweet ice cream.",
-    nameAr: "آيس كريم",
-    descAr: "آيس كريم بارد ولذيذ.",
-    image: "images/ice-cream.jpg.jpeg",
-  },
+  [
+    1,
+    "burger",
+    20,
+    "Classic Burger",
+    "برجر كلاسيك",
+    "Beef burger with cheese and fresh vegetables.",
+    "برجر لحم مع الجبن والخضار الطازجة.",
+    "burger",
+  ],
+
+  [
+    2,
+    "burger",
+    23,
+    "Cheese Burger",
+    "برجر بالجبن",
+    "Juicy beef burger with melted cheese.",
+    "برجر لحم شهي مع الجبن الذائب.",
+    "cheeseburger",
+  ],
+
+  [
+    3,
+    "burger",
+    21,
+    "Chicken Burger",
+    "برجر دجاج",
+    "Crispy chicken with lettuce and special sauce.",
+    "دجاج مقرمش مع الخس والصلصة الخاصة.",
+    "chicken-burger",
+  ],
+
+  [
+    4,
+    "pizza",
+    25,
+    "Margherita Pizza",
+    "بيتزا مارغريتا",
+    "Classic pizza with tomato sauce and cheese.",
+    "بيتزا كلاسيكية بصلصة الطماطم والجبن.",
+    "pizza",
+  ],
+
+  [
+    5,
+    "pizza",
+    28,
+    "Chicken Pizza",
+    "بيتزا الدجاج",
+    "Pizza topped with chicken and fresh vegetables.",
+    "بيتزا بالدجاج والخضار الطازجة.",
+    "chicken-pizza",
+  ],
+
+  [
+    6,
+    "pizza",
+    27,
+    "Spicy Pizza",
+    "بيتزا حارة",
+    "Spicy pizza for people who love extra flavor.",
+    "بيتزا حارة لعشاق النكهات القوية.",
+    "spicy-pizza",
+  ],
+
+  [
+    7,
+    "chicken",
+    22,
+    "Fried Chicken",
+    "دجاج مقلي",
+    "Crispy fried chicken pieces.",
+    "قطع دجاج مقلية ومقرمشة.",
+    "chicken",
+  ],
+
+  [
+    8,
+    "chicken",
+    19,
+    "Chicken Strips",
+    "ستربس الدجاج",
+    "Crispy chicken strips served with sauce.",
+    "شرائح دجاج مقرمشة تُقدم مع الصلصة.",
+    "strips",
+  ],
+
+  [
+    9,
+    "drink",
+    6,
+    "Cola",
+    "كولا",
+    "Cold refreshing soft drink.",
+    "مشروب غازي بارد ومنعش.",
+    "cola",
+  ],
+
+  [
+    10,
+    "drink",
+    8,
+    "Fresh Juice",
+    "عصير طازج",
+    "Fresh fruit juice.",
+    "عصير فواكه طازج.",
+    "juice",
+  ],
+
+  [
+    11,
+    "dessert",
+    12,
+    "Chocolate Cake",
+    "كيكة الشوكولاتة",
+    "Soft chocolate cake with rich flavor.",
+    "كيكة شوكولاتة طرية بنكهة غنية.",
+    "cake",
+  ],
+
+  [
+    12,
+    "dessert",
+    10,
+    "Ice Cream",
+    "آيس كريم",
+    "Cold and sweet ice cream.",
+    "آيس كريم بارد ولذيذ.",
+    "ice-cream",
+  ],
+].map(([id, category, price, name, nameAr, desc, descAr, img]) => ({
+  id,
+  category,
+  price,
+  name,
+  nameAr,
+  desc,
+  descAr,
+  image: `images/${img}.jpg.jpeg`,
+}));
+
+const categories = [
+  ["all", "All"],
+  ["burger", "Burgers"],
+  ["pizza", "Pizza"],
+  ["chicken", "Chicken"],
+  ["drink", "Drinks"],
+  ["dessert", "Desserts"],
 ];
-// Needs `translations` and `foods` from script.js (loaded before this file).
+
+const gallery = [
+  ["burger", "Burger"],
+  ["pizza", "Pizza"],
+  ["chicken", "Chicken"],
+  ["fries", "Fries"],
+  ["juice", "Drinks"],
+  ["cake", "Dessert"],
+];
+
+// أدوات عامة
+const $ = (id) => document.getElementById(id);
+
+const BS_CSS =
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap";
+
 const readStorage = (key) => {
   try {
     return localStorage.getItem(key);
@@ -259,17 +317,31 @@ const readStorage = (key) => {
     return null;
   }
 };
+
 const writeStorage = (key, value) => {
   try {
     localStorage.setItem(key, value);
-  } catch {
-    /* works without storage */
-  }
+  } catch {}
 };
-const BS_CSS =
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap";
+
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (char) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[char],
+  );
+
+// الحالة الأساسية
 let language = readStorage("tastyGoLanguage") === "en" ? "en" : "ar";
+
 let activeCategory = "all";
+
 const deal = {
   id: 100,
   name: "Family Meal Deal",
@@ -277,231 +349,707 @@ const deal = {
   price: 60,
   image: "images/burger.jpg.jpeg",
 };
+
 const product = (id) =>
   id === 100 ? deal : foods.find((food) => food.id === id);
+
+// السلة
 let cart = [];
+
 try {
   const saved = JSON.parse(readStorage("tastyGoCart") || "[]");
-  if (Array.isArray(saved))
+
+  if (Array.isArray(saved)) {
     cart = saved
       .filter(
-        (i) =>
-          i &&
-          product(i.id) &&
-          Number.isSafeInteger(i.quantity) &&
-          i.quantity > 0,
+        (item) =>
+          item &&
+          product(item.id) &&
+          Number.isSafeInteger(item.quantity) &&
+          item.quantity > 0,
       )
-      .map((i) => ({ id: i.id, quantity: i.quantity }));
-} catch {
-  /* ignore malformed data */
-}
-const t = (key) => (language === "ar" ? translations[key] || key : key);
-const money = (value) => `${value} ${language === "ar" ? "ر.س" : "SAR"}`;
-const foodName = (food) => (language === "ar" ? food.nameAr : food.name);
-const escapeHtml = (v) =>
-  String(v).replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
-      ],
-  );
-const cartTotal = () =>
-  cart.reduce((sum, i) => sum + product(i.id).price * i.quantity, 0);
+      .map((item) => ({
+        id: item.id,
+        quantity: item.quantity,
+      }));
+  }
+} catch {}
 
+const t = (key) => (language === "ar" ? translations[key] || key : key);
+
+const money = (value) => `${value} ${language === "ar" ? "ر.س" : "SAR"}`;
+
+const foodName = (food) => (language === "ar" ? food.nameAr : food.name);
+
+const cartTotal = () =>
+  cart.reduce((sum, item) => sum + product(item.id).price * item.quantity, 0);
+
+// تغيير اللغة
 function setLanguage(next) {
   language = next === "en" ? "en" : "ar";
+
+  const ar = language === "ar";
+
   document.documentElement.lang = language;
-  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-  // Bootstrap ships a separate stylesheet for RTL
-  document.getElementById("bootstrapCss").href =
-    `${BS_CSS}${language === "ar" ? ".rtl" : ""}.min.css`;
-  document.title =
-    language === "ar" ? "TastyGo | مطعم تيستي جو" : "TastyGo | Restaurant";
-  document.querySelector('meta[name="description"]').content =
-    language === "ar"
+  document.documentElement.dir = ar ? "rtl" : "ltr";
+
+  $("bootstrapCss").href = `${BS_CSS}${ar ? ".rtl" : ""}.min.css`;
+
+  document.title = ar ? "TastyGo | مطعم تيستي جو" : "TastyGo | Restaurant";
+
+  const description = document.querySelector('meta[name="description"]');
+
+  if (description) {
+    description.content = ar
       ? "مطعم تيستي جو — وجبات طازجة ولذيذة وطلب بسهولة."
       : "TastyGo Restaurant - Fresh food, delicious taste and easy online ordering.";
-  document
-    .querySelectorAll("[data-i18n]")
-    .forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  }
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.textContent = t(el.dataset.i18n);
+  });
+
   document.querySelectorAll("[data-placeholder]").forEach((el) => {
     el.placeholder = t(el.dataset.placeholder);
     el.setAttribute("aria-label", el.placeholder);
   });
-  document
-    .querySelectorAll("[data-label]")
-    .forEach((el) => el.setAttribute("aria-label", t(el.dataset.label)));
-  document
-    .querySelectorAll("[data-alt]")
-    .forEach((el) => (el.alt = t(el.dataset.alt)));
-  const button = document.getElementById("languageBtn");
-  button.textContent = language === "ar" ? "English" : "العربية";
-  button.lang = language === "ar" ? "en" : "ar";
+
+  document.querySelectorAll("[data-label]").forEach((el) => {
+    el.setAttribute("aria-label", t(el.dataset.label));
+  });
+
+  document.querySelectorAll("[data-alt]").forEach((el) => {
+    el.alt = t(el.dataset.alt);
+  });
+
+  const button = $("languageBtn");
+
+  button.textContent = ar ? "English" : "العربية";
+
+  button.lang = ar ? "en" : "ar";
+
   button.setAttribute(
     "aria-label",
-    language === "ar" ? "Switch to English" : "التبديل إلى العربية",
+    ar ? "Switch to English" : "التبديل إلى العربية",
   );
+
   writeStorage("tastyGoLanguage", language);
+
+  updateThemeBtn();
   displayFoods(activeCategory);
   updateCart();
 }
 
+// عرض قائمة الطعام
 function displayFoods(category = "all") {
   activeCategory = category;
+
   const list =
     category === "all"
       ? foods
       : foods.filter((food) => food.category === category);
-  document.getElementById("foodGrid").innerHTML = list
+
+  $("foodGrid").innerHTML = list
     .map(
       (food) => `
-    <div class="col-md-6 col-lg-4"><article class="card h-100 food-card">
-      <img class="card-img-top food-image" src="${food.image}" alt="${escapeHtml(foodName(food))}" loading="lazy">
-      <div class="card-body d-flex flex-column">
-        <h3 class="h5 card-title">${foodName(food)}</h3>
-        <p class="card-text text-secondary small">${language === "ar" ? food.descAr : food.desc}</p>
-        <div class="mt-auto d-flex justify-content-between align-items-center">
-          <span class="fw-bold text-tg">${money(food.price)}</span>
-          <button class="btn btn-tg btn-sm" onclick="addToCart(${food.id})">${t("Add to Cart")}</button>
+        <div class="col-md-6 col-lg-4">
+
+          <article class="card h-100 food-card">
+
+            <img
+              class="card-img-top food-image"
+              src="${food.image}"
+              alt="${escapeHtml(foodName(food))}"
+              loading="lazy"
+            >
+
+            <div class="card-body d-flex flex-column">
+
+              <h3 class="h5 card-title">
+                ${foodName(food)}
+              </h3>
+
+              <p class="card-text text-secondary small">
+                ${language === "ar" ? food.descAr : food.desc}
+              </p>
+
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+
+                <span class="fw-bold text-tg">
+                  ${money(food.price)}
+                </span>
+
+                <button
+                  class="btn btn-tg btn-sm"
+                  onclick="addToCart(${food.id})"
+                >
+                  ${t("Add to Cart")}
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
         </div>
-      </div>
-    </article></div>`,
+      `,
     )
     .join("");
 }
 
-// ----- Cart (Bootstrap offcanvas handles overlay, Esc, focus trap, scroll lock) -----
-const cartPanel = () =>
-  bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("cart"));
-const openCart = () => cartPanel().show();
-const closeCart = () => cartPanel().hide();
-
+// إضافة للسلة
 function addToCart(id) {
   if (!product(id)) return;
-  const existing = cart.find((i) => i.id === id);
-  if (existing) existing.quantity++;
-  else cart.push({ id, quantity: 1 });
+
+  const existing = cart.find((item) => item.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      id,
+      quantity: 1,
+    });
+  }
+
   saveCart();
-  openCart();
 }
-function addDeal() {
-  addToCart(100);
-}
+
+// إضافة عرض العائلة
+const addDeal = () => addToCart(100);
+
+// تغيير الكمية
 function changeQuantity(id, amount) {
-  const item = cart.find((i) => i.id === id);
+  const item = cart.find((item) => item.id === id);
+
   if (!item) return;
+
   item.quantity += amount;
-  cart = cart.filter((i) => i.quantity > 0);
+
+  cart = cart.filter((item) => item.quantity > 0);
+
   saveCart();
 }
+
+// حفظ السلة
 function saveCart() {
   writeStorage("tastyGoCart", JSON.stringify(cart));
+
   updateCart();
 }
+
+// تحديث السلة
 function updateCart() {
-  document.getElementById("cartItems").innerHTML = cart.length
+  $("cartCount").textContent = cart.reduce(
+    (sum, item) => sum + item.quantity,
+    0,
+  );
+
+  const orderItems = $("orderItems");
+
+  const orderSubtotal = $("orderSubtotal");
+
+  const orderDelivery = $("orderDelivery");
+
+  const orderTotal = $("orderTotal");
+
+  if (!orderItems || !orderSubtotal || !orderDelivery || !orderTotal) {
+    return;
+  }
+
+  orderItems.innerHTML = cart.length
     ? cart
         .map((item) => {
           const food = product(item.id);
-          return `<div class="d-flex align-items-center gap-3 py-3 border-bottom">
-      <img class="cart-item-image" src="${food.image}" alt="">
-      <div class="flex-grow-1"><b>${foodName(food)}</b><br><small class="text-secondary">${money(food.price)} × ${item.quantity}</small></div>
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn btn-light btn-sm" aria-label="${t("Decrease quantity")} — ${foodName(food)}" onclick="changeQuantity(${item.id}, -1)">−</button>
-        <span>${item.quantity}</span>
-        <button class="btn btn-light btn-sm" aria-label="${t("Increase quantity")} — ${foodName(food)}" onclick="changeQuantity(${item.id}, 1)">+</button>
-      </div></div>`;
+
+          return `
+              <div class="d-flex align-items-center gap-3 py-3 border-bottom">
+
+                <img
+                  class="cart-item-image"
+                  src="${food.image}"
+                  alt="${escapeHtml(foodName(food))}"
+                >
+
+                <div class="flex-grow-1">
+
+                  <strong>
+                    ${foodName(food)}
+                  </strong>
+
+                  <div class="text-secondary small">
+                    ${money(food.price)}
+                  </div>
+
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+
+                  <button
+                    class="btn btn-outline-secondary btn-sm"
+                    type="button"
+                    onclick="changeQuantity(${item.id}, -1)"
+                  >
+                    −
+                  </button>
+
+                  <strong>
+                    ${item.quantity}
+                  </strong>
+
+                  <button
+                    class="btn btn-outline-secondary btn-sm"
+                    type="button"
+                    onclick="changeQuantity(${item.id}, 1)"
+                  >
+                    +
+                  </button>
+
+                </div>
+
+                <strong class="text-tg">
+                  ${money(food.price * item.quantity)}
+                </strong>
+
+              </div>
+            `;
         })
         .join("")
-    : `<p>${t("Your cart is empty.")}</p>`;
-  document.getElementById("cartTotal").textContent = money(cartTotal());
-  document.getElementById("cartCount").textContent = cart.reduce(
-    (sum, i) => sum + i.quantity,
-    0,
-  );
+    : `
+        <div class="text-center py-5">
+
+          <div class="fs-1 mb-3">
+            🛒
+          </div>
+
+          <p class="text-secondary mb-0">
+            ${t("Your cart is empty.")}
+          </p>
+
+        </div>
+      `;
+
+  const subtotal = cartTotal();
+
+  const delivery = subtotal > 0 && subtotal < 60 ? 10 : 0;
+
+  orderSubtotal.textContent = money(subtotal);
+
+  orderDelivery.textContent = delivery ? money(delivery) : t("Free");
+
+  orderTotal.textContent = money(subtotal + delivery);
 }
-function clearCart() {
-  if (cart.length && confirm(t("Are you sure you want to clear your cart?"))) {
-    cart = [];
-    saveCart();
+
+// إتمام الطلب
+$("orderForm")?.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (!cart.length) {
+    alert(t("Your cart is empty, add an item first."));
+
+    return;
   }
-}
 
-// Demo interactions; connect to a backend for real orders and messages.
-function checkout() {
-  if (!cart.length) return alert(t("Your cart is empty."));
-  const name = prompt(t("Enter your name:"));
-  if (!name?.trim()) return alert(t("Please enter your name."));
-  const address = prompt(t("Enter your delivery address:"));
-  if (!address?.trim()) return alert(t("Please enter your address."));
-  if (
-    confirm(
-      `${t("Order Summary")}\n\n${t("Name")}: ${name}\n${t("Address")}: ${address}\n${t("Total")}: ${money(cartTotal())}\n\n${t("Confirm your order?")}`,
-    )
-  ) {
-    alert(
-      `${t("Thank you")} ${name}!\n\n${t("Your order has been confirmed.")}`,
-    );
-    cart = [];
-    saveCart();
-    closeCart();
-  } else alert(t("Order cancelled."));
-}
+  const name = $("orderName").value.trim();
 
+  const phone = $("orderPhone").value.trim();
+
+  const email = $("orderEmail").value.trim();
+
+  const address = $("orderAddress").value.trim();
+
+  const payment = document.querySelector(
+    'input[name="payment"]:checked',
+  )?.value;
+
+  if (name.length < 2) {
+    alert(t("Please enter your name."));
+    return;
+  }
+
+  if (!/^05\d{8}$/.test(phone)) {
+    alert(t("Phone number must look like 05xxxxxxxx"));
+    return;
+  }
+
+  if (!email.includes("@") || !email.includes(".")) {
+    alert(t("Please enter a valid email."));
+    return;
+  }
+
+  if (address.length < 5) {
+    alert(t("Please enter your delivery address."));
+    return;
+  }
+
+  const subtotal = cartTotal();
+
+  const delivery = subtotal > 0 && subtotal < 60 ? 10 : 0;
+
+  const orderId = `TG-${Date.now().toString().slice(-6)}`;
+
+  $("orderNumber").textContent = orderId;
+
+  writeStorage(
+    "tastyGoLastOrder",
+    JSON.stringify({
+      id: orderId,
+      name,
+      phone,
+      email,
+      address,
+      payment,
+      total: subtotal + delivery,
+    }),
+  );
+
+  cart = [];
+
+  saveCart();
+
+  this.reset();
+
+  $("orderSuccess").classList.remove("d-none");
+
+  $("orderSuccess").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
+// الفلاتر
+$("filters").innerHTML = categories
+  .map(
+    ([category, key], index) => `
+      <button
+        class="filter btn btn-outline-tg rounded-pill${index ? "" : " active"}"
+        data-category="${category}"
+        data-i18n="${key}"
+      >
+        ${t(key)}
+      </button>
+    `,
+  )
+  .join("");
+
+// المعرض
+$("galleryGrid").innerHTML = gallery
+  .map(
+    ([image, key]) => `
+      <div class="col-6 col-md-4">
+
+        <div
+          class="gallery-item position-relative overflow-hidden rounded-3"
+        >
+
+          <img
+            src="images/${image}.jpg.jpeg"
+            alt="${t(key)}"
+            data-alt="${key}"
+            loading="lazy"
+          >
+
+          <span
+            class="badge rounded-pill bg-dark bg-opacity-75 position-absolute bottom-0 start-50 translate-middle-x mb-3 px-3 py-2"
+            data-i18n="${key}"
+          >
+            ${t(key)}
+          </span>
+
+        </div>
+
+      </div>
+    `,
+  )
+  .join("");
+
+// تشغيل الفلاتر
 document.querySelectorAll(".filter").forEach((button) => {
   button.setAttribute("aria-pressed", button.classList.contains("active"));
+
   button.addEventListener("click", () => {
     document.querySelectorAll(".filter").forEach((btn) => {
-      btn.classList.toggle("active", btn === button);
-      btn.setAttribute("aria-pressed", btn === button);
+      const active = btn === button;
+
+      btn.classList.toggle("active", active);
+
+      btn.setAttribute("aria-pressed", active);
     });
+
     displayFoods(button.dataset.category);
   });
 });
-document
-  .getElementById("reservationForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert(
-      `${t("Reservation confirmed!")}\n\n${t("Name")}: ${document.getElementById("resName").value}\n${t("People")}: ${document.getElementById("resPeople").selectedOptions[0].textContent}\n${t("Date")}: ${document.getElementById("resDate").value}\n${t("Time")}: ${document.getElementById("resTime").value}`,
-    );
-    this.reset();
-  });
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert(
-    `${t("Thank you")} ${document.getElementById("contactName").value}!\n\n${t("Your message has been sent.")}`,
+
+// =========================
+// الحجز
+// =========================
+
+const reservationDate = $("resDate");
+
+const reservationPhone = $("resPhone");
+
+const reservationTime = $("resTime");
+
+const timeError = $("resTimeError");
+
+// تاريخ اليوم
+const today = new Date();
+
+const todayText = `${today.getFullYear()}-${String(
+  today.getMonth() + 1,
+).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+if (reservationDate) {
+  reservationDate.min = todayText;
+}
+
+// رقم الجوال يقبل أرقام فقط
+reservationPhone?.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "").slice(0, 10);
+});
+
+// التحقق من وقت الدوام
+reservationTime?.addEventListener("change", function () {
+  const invalid = this.value && (this.value < "10:00" || this.value > "23:59");
+
+  this.classList.toggle("is-invalid", invalid);
+
+  timeError?.classList.toggle("d-none", !invalid);
+});
+
+// إرسال الحجز
+$("reservationForm")?.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const nameInput = $("resName");
+
+  const phoneInput = $("resPhone");
+
+  const dateInput = $("resDate");
+
+  const timeInput = $("resTime");
+
+  const peopleInput = $("resPeople");
+
+  const name = nameInput.value.trim();
+
+  const phone = phoneInput.value.trim();
+
+  const date = dateInput.value;
+
+  const time = timeInput.value;
+
+  const people = peopleInput.selectedOptions[0]?.textContent || "";
+
+  const invalidName = name.length < 2;
+
+  const invalidPhone = !/^05\d{8}$/.test(phone);
+
+  const selectedDate = date ? new Date(`${date}T00:00:00`) : null;
+
+  const todayDate = new Date();
+
+  todayDate.setHours(0, 0, 0, 0);
+
+  const invalidDate = !selectedDate || selectedDate < todayDate;
+
+  const invalidTime = !time || time < "10:00" || time > "23:59";
+
+  const invalidPeople = !peopleInput.value;
+
+  nameInput.classList.toggle("is-invalid", invalidName);
+
+  phoneInput.classList.toggle("is-invalid", invalidPhone);
+
+  dateInput.classList.toggle("is-invalid", invalidDate);
+
+  timeInput.classList.toggle("is-invalid", invalidTime);
+
+  peopleInput.classList.toggle("is-invalid", invalidPeople);
+
+  timeError?.classList.toggle("d-none", !invalidTime);
+
+  if (invalidName) {
+    nameInput.focus();
+    return;
+  }
+
+  if (invalidPhone) {
+    phoneInput.focus();
+    return;
+  }
+
+  if (invalidDate) {
+    dateInput.focus();
+    return;
+  }
+
+  if (invalidTime) {
+    timeInput.focus();
+    return;
+  }
+
+  if (invalidPeople) {
+    peopleInput.focus();
+    return;
+  }
+
+  // حذف رسالة قديمة
+  $("reservationSuccess")?.remove();
+
+  // رسالة النجاح
+  this.insertAdjacentHTML(
+    "afterend",
+    `
+      <div
+        id="reservationSuccess"
+        class="reservation-success mt-4"
+      >
+
+        <div class="reservation-success-icon">
+          ✓
+        </div>
+
+        <h4 class="fw-bold">
+          ${t("Reservation Confirmed")}
+        </h4>
+
+        <p class="text-secondary">
+          ${t("Your reservation has been received successfully")}
+        </p>
+
+        <div class="reservation-details">
+
+          <div>
+            <span>${t("Name")}</span>
+            <strong>
+              ${escapeHtml(name)}
+            </strong>
+          </div>
+
+          <div>
+            <span>${t("Phone Number")}</span>
+            <strong dir="ltr">
+              ${escapeHtml(phone)}
+            </strong>
+          </div>
+
+          <div>
+            <span>${t("Number of people")}</span>
+            <strong>
+              ${escapeHtml(people)}
+            </strong>
+          </div>
+
+          <div>
+            <span>${t("Date")}</span>
+            <strong>
+              ${escapeHtml(date)}
+            </strong>
+          </div>
+
+          <div>
+            <span>${t("Time")}</span>
+            <strong>
+              ${escapeHtml(time)}
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+      `,
   );
+
+  this.reset();
+
+  reservationDate.min = todayText;
+
+  $("reservationSuccess").scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
+});
+
+// التواصل
+$("contactForm")?.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  alert(
+    `${t("Thank you")} ${$("contactName").value}!
+
+${t("Your message has been sent.")}`,
+  );
+
   this.reset();
 });
+
+// النشرة البريدية
 function subscribe() {
-  const input = document.getElementById("newsletterEmail");
-  if (!input.value.trim()) return alert(t("Please enter your email."));
-  if (!input.reportValidity()) return;
-  alert(`${t("Thank you")}!\n\n${t("You are now subscribed.")}`);
+  const input = $("newsletterEmail");
+
+  if (!input.value.trim()) {
+    alert(t("Please enter your email."));
+    return;
+  }
+
+  if (!input.reportValidity()) {
+    return;
+  }
+
+  alert(
+    `${t("Thank you")}!
+
+${t("You are now subscribed.")}`,
+  );
+
   input.value = "";
 }
 
-// Close the mobile navbar after clicking a link
-document
-  .querySelectorAll("#nav a")
-  .forEach((link) =>
-    link.addEventListener("click", () =>
-      bootstrap.Collapse.getInstance(document.getElementById("nav"))?.hide(),
-    ),
+// إغلاق قائمة الجوال
+document.querySelectorAll("#nav a").forEach((link) => {
+  link.addEventListener("click", () =>
+    bootstrap.Collapse.getInstance($("nav"))?.hide(),
   );
-document
-  .getElementById("languageBtn")
-  .addEventListener("click", () =>
-    setLanguage(language === "ar" ? "en" : "ar"),
-  );
+});
 
-const backToTop = document.getElementById("backToTop");
-const updateTopButton = () => {
-  backToTop.hidden = window.scrollY < 400;
-};
-window.addEventListener("scroll", updateTopButton, { passive: true });
+// الوضع الداكن
+function updateThemeBtn() {
+  const dark = document.documentElement.dataset.bsTheme === "dark";
+
+  $("themeBtn").textContent = dark ? "☀️" : "🌙";
+
+  $("themeBtn").setAttribute(
+    "aria-label",
+    t(dark ? "Light mode" : "Dark mode"),
+  );
+}
+
+$("themeBtn").addEventListener("click", () => {
+  const next =
+    document.documentElement.dataset.bsTheme === "dark" ? "light" : "dark";
+
+  document.documentElement.dataset.bsTheme = next;
+
+  writeStorage("tastyGoTheme", next);
+
+  updateThemeBtn();
+});
+
+// زر اللغة
+$("languageBtn").addEventListener("click", () =>
+  setLanguage(language === "ar" ? "en" : "ar"),
+);
+
+// الرجوع للأعلى
+const backToTop = $("backToTop");
+
+const updateTopButton = () => (backToTop.hidden = window.scrollY < 400);
+
+window.addEventListener("scroll", updateTopButton, {
+  passive: true,
+});
+
 backToTop.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
@@ -509,7 +1057,12 @@ backToTop.addEventListener("click", () => {
       ? "instant"
       : "smooth",
   });
-  document.querySelector(".navbar .logo").focus({ preventScroll: true });
+
+  document.querySelector(".navbar .logo")?.focus({
+    preventScroll: true,
+  });
 });
+
+// تشغيل الموقع
 setLanguage(language);
 updateTopButton();
